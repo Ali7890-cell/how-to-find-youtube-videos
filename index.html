@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How to Search for Specific Videos on YouTube: Complete Guide</title>
+  <meta name="description" content="Learn how to search for specific videos on YouTube using better keywords, search filters, channel names, playlists and practical search techniques.">
+  <meta name="keywords" content="how to search for specific videos on YouTube, YouTube video search, find videos on YouTube, YouTube search filters, search YouTube videos">
+  <meta name="author" content="YouTube Mods">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Search for Specific Videos on YouTube">
+  <meta property="og:description" content="Discover practical ways to find the exact videos you want on YouTube with keywords, filters and smarter search techniques.">
+  <meta property="og:site_name" content="YouTube Mods">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Search for Specific Videos on YouTube">
+  <meta name="twitter:description" content="A practical guide to finding specific videos on YouTube using search terms and filters.">
+
+  <style>
+    :root {
+      --navy: #071b33;
+      --navy-light: #102d4b;
+      --blue: #0879bd;
+      --cyan: #36d6df;
+      --ice: #effaff;
+      --white: #ffffff;
+      --text: #24394d;
+      --muted: #62778a;
+      --border: #dceaf2;
+      --soft-blue: #e8f7ff;
+      --shadow: 0 14px 38px rgba(7, 27, 51, .09);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4faff;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    a {
+      color: #0879bd;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #045b91;
+      text-decoration: underline;
+    }
+
+    .hero {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 88px 20px 82px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(54,214,223,.23), transparent 28%),
+        radial-gradient(circle at 10% 90%, rgba(8,121,189,.35), transparent 32%),
+        linear-gradient(130deg, #06172d, #0b3456 58%, #0879bd);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -100px;
+      bottom: -220px;
+      box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+                  0 0 0 75px rgba(255,255,255,.02);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(54,214,223,.5);
+      border-radius: 30px;
+      color: #9dfaff;
+      background: rgba(54,214,223,.1);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.13;
+      letter-spacing: -1.7px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #d7edfa;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      color: #c5e5f5;
+      font-size: 13px;
+    }
+
+    .hero-meta span {
+      background: rgba(255,255,255,.09);
+      padding: 7px 13px;
+      border-radius: 30px;
+    }
+
+    .page-wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 45px auto 70px;
+    }
+
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .intro-card p {
+      font-size: 17px;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 42px);
+      box-shadow: var(--shadow);
+    }
+
+    .article-content h2 {
+      color: var(--navy);
+      font-size: clamp(24px, 3vw, 30px);
+      line-height: 1.3;
+      margin: 42px 0 16px;
+      letter-spacing: -.5px;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      color: #0a5c8c;
+      font-size: 20px;
+      margin: 25px 0 10px;
+    }
+
+    .article-content p {
+      margin-bottom: 17px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-left: 25px;
+      margin: 12px 0 22px;
+    }
+
+    .article-content li {
+      padding-left: 5px;
+      margin-bottom: 9px;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, #e8f8ff, #f4fdff);
+      border-left: 4px solid var(--cyan);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+
+    .info-box strong {
+      color: var(--navy);
+    }
+
+    .tip-card {
+      background: #f0f8ff;
+      border: 1px solid #d6eaf7;
+      padding: 21px;
+      border-radius: 15px;
+      margin: 22px 0;
+    }
+
+    .tip-card h3 {
+      margin-top: 0;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0 !important;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 17px 18px 17px 62px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      margin-bottom: 13px;
+      background: #fbfdff;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 17px;
+      top: 17px;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 22px 0;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 480px;
+      background: white;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--navy);
+      color: white;
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      background: white;
+      padding: 23px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .toc h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 13px;
+    }
+
+    .toc ul {
+      list-style: none;
+    }
+
+    .toc li {
+      border-bottom: 1px solid #edf3f7;
+      padding: 8px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .toc li:last-child {
+      border: 0;
+    }
+
+    .toc a {
+      color: #456174;
+      font-weight: 600;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 19px 20px;
+      margin: 14px 0;
+      background: #fbfdff;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 9px;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    .conclusion {
+      margin-top: 35px;
+      padding: 27px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(120deg, #071b33, #0879bd);
+    }
+
+    .conclusion h2 {
+      color: white;
+      margin-top: 0;
+    }
+
+    .conclusion p {
+      color: #e0f4ff;
+      margin-bottom: 0;
+    }
+
+    .sources {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .sources h3 {
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+
+    .sources li {
+      margin-bottom: 8px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 850px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .page-wrap {
+        width: min(100% - 22px, 1120px);
+        margin-top: 22px;
+      }
+
+      .intro-card {
+        padding: 22px;
+      }
+
+      .article-content {
+        padding: 22px 18px;
+      }
+
+      .hero h1 {
+        letter-spacing: -.8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">YouTube Search Guide</span>
+    <h1>How to Search for Specific Videos on YouTube</h1>
+    <p>
+      Learn how to find the videos you actually want with better search
+      phrases, useful filters, channel searches, playlists and simple
+      techniques that make browsing YouTube easier.
+    </p>
+    <div class="hero-meta">
+      <span>Practical How-To Guide</span>
+      <span>Beginner Friendly</span>
+      <span>Updated Guide</span>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <section class="intro-card">
+    <p>
+      YouTube has videos covering almost every subject, but finding one
+      particular tutorial, review, explanation or clip can sometimes take
+      longer than expected. A broad search may return thousands of results,
+      many of which are not closely related to what you had in mind.
+      The solution is to make your search more specific instead of repeatedly
+      scrolling through unrelated recommendations.
+    </p>
+    <p>
+      This guide explains how to search for specific videos on YouTube,
+      choose useful keywords, narrow results with filters and find content
+      from particular creators. Whether you use YouTube for learning,
+      entertainment or research, these techniques can help you reach more
+      relevant results.
+    </p>
+  </section>
+
+  <div class="article-layout">
+
+    <article class="article-content">
+
+      <h2 id="why-search">Why Finding a Specific YouTube Video Can Be Difficult</h2>
+
+      <p>
+        A search such as "cooking" or "technology" is too broad to describe
+        one particular video. YouTube has to interpret what you mean and
+        display content that may match different interests. As a result,
+        you might see recipes, product reviews, short clips and general
+        discussions together.
+      </p>
+
+      <p>
+        The same problem occurs when you remember only part of a video's
+        title. You may know the topic or creator but not the exact wording.
+        In these situations, a more descriptive search phrase and a few
+        additional filters can make the process easier.
+      </p>
+
+      <p>
+        YouTube explains that its search system considers factors such as
+        relevance, engagement and quality. It may also use your search and
+        watch history when personalisation is enabled. This helps explain
+        why two people can sometimes see different results for the same
+        search.
+      </p>
+
+      <h2 id="keywords">1. Use Specific Keywords Instead of Broad Searches</h2>
+
+      <p>
+        Your search phrase is the starting point for finding a particular
+        video. Rather than entering only one general word, describe the
+        subject, the action and any useful detail you remember.
+      </p>
+
+      <p>For example, instead of searching for "phone camera", try:</p>
+
+      <ul>
+        <li>Best smartphone camera settings for night photography</li>
+        <li>How to improve low-light photos on Android</li>
+        <li>Smartphone camera comparison with sample pictures</li>
+        <li>How to record stable video using a phone</li>
+      </ul>
+
+      <p>
+        These phrases communicate a clearer purpose. They also help you
+        separate tutorials from reviews, comparisons and demonstrations.
+        You do not need to write a complete sentence. A few accurate,
+        descriptive words are usually enough.
+      </p>
+
+      <div class="info-box">
+        <strong>Search tip:</strong> Think about what makes the video
+        different from other videos on the same subject. Add that detail
+        to your search phrase, such as the device, year, creator, location
+        or technique.
+      </div>
+
+      <h2 id="filters">2. Use YouTube Search Filters</h2>
+
+      <p>
+        Search filters help narrow down the results after you enter a query.
+        They are useful when you know the topic but want a particular type
+        of content, such as a Short, a full-length video, a playlist or a
+        channel.
+      </p>
+
+      <ol class="steps">
+        <li>Open YouTube in your browser or mobile app.</li>
+        <li>Enter a descriptive phrase in the search box.</li>
+        <li>Wait for the results page to appear.</li>
+        <li>Open the Filters option available on your device.</li>
+        <li>Choose the relevant content type or other available filters.</li>
+        <li>Review the updated results and refine your search if needed.</li>
+      </ol>
+
+      <p>
+        Available options can differ between desktop, mobile browsers and
+        the YouTube app. Depending on the interface, you may be able to
+        narrow results by upload date, content type, duration and other
+        criteria.
+      </p>
+
+      <h3>Choose the Right Content Type</h3>
+
+      <p>
+        If you are looking for a regular tutorial, selecting long-form
+        video results can be more useful than browsing short clips.
+        If you want a quick demonstration, Shorts may be a better fit.
+        You can also search for channels or playlists when you want
+        content organised around a particular creator or subject.
+      </p>
+
+      <h3>Filter by Upload Date</h3>
+
+      <p>
+        Upload date is helpful when the topic changes frequently. For
+        example, a guide about a recently updated application may be more
+        useful than a tutorial recorded several years ago. On the other
+        hand, older videos can still be valuable for historical topics,
+        basic concepts and established skills.
+      </p>
+
+      <h3>Use Duration to Narrow Your Choices</h3>
+
+      <p>
+        Duration can help when you have a preference for quick explanations
+        or detailed lessons. A short video may answer a simple question,
+        while a longer tutorial may provide step-by-step instructions.
+        Choose based on the depth of information you need rather than
+        assuming that longer videos are always better.
+      </p>
+
+      <div class="tip-card">
+        <h3>Keep Filter Names in Mind</h3>
+        <p>
+          YouTube updates its search interface from time to time. In a
+          January 2026 announcement, YouTube described changes including
+          a dedicated Shorts filter and changes to sorting labels. If
+          your screen looks different from an older tutorial, check the
+          current Filters menu rather than relying on outdated screenshots.
+        </p>
+      </div>
+
+      <h2 id="channel-search">3. Search for Videos from a Specific Channel</h2>
+
+      <p>
+        If you remember who uploaded a video, include the channel name in
+        your search. This can reduce unrelated results and help you locate
+        the original creator.
+      </p>
+
+      <p>For example, try searches such as:</p>
+
+      <ul>
+        <li>Photography tutorial by [channel name]</li>
+        <li>Latest Android tips from [channel name]</li>
+        <li>[Channel name] product review</li>
+      </ul>
+
+      <p>
+        You can also open the channel directly and use its available
+        search option, if shown, to look for a topic within that creator's
+        uploads. This is especially useful for channels that publish
+        hundreds of videos across several related subjects.
+      </p>
+
+      <h2 id="title-memory">4. Find a Video When You Remember Only Part of Its Title</h2>
+
+      <p>
+        Sometimes you remember a phrase from a title but cannot recall
+        the complete wording. Start with the words you remember and add
+        the subject or context around them.
+      </p>
+
+      <p>
+        For instance, if you remember a video title included "beginner
+        photography mistakes", search that phrase with an extra detail
+        such as the camera model or the creator's name.
+      </p>
+
+      <p>
+        Avoid adding too many uncertain words at once. If the search
+        becomes too narrow, it may miss the video. Start with two or
+        three distinctive terms, review the results and adjust the phrase
+        gradually.
+      </p>
+
+      <h2 id="playlists">5. Search for Playlists Instead of Individual Videos</h2>
+
+      <p>
+        A playlist can be a better choice when you want several videos
+        covering the same topic. Creators often arrange tutorials,
+        lessons, product guides and entertainment collections into
+        playlists.
+      </p>
+
+      <p>
+        For example, someone learning video editing might search for
+        "beginner video editing course playlist" rather than looking
+        for every lesson separately. This can make it easier to follow
+        a sequence and return to earlier lessons.
+      </p>
+
+      <p>
+        Use the playlist content type filter when it is available, or
+        include the word "playlist" in your search phrase.
+      </p>
+
+      <h2 id="google-search">6. Use Google to Find Public YouTube Videos</h2>
+
+      <p>
+        YouTube's own search is usually the best place to start, but
+        Google can provide another way to discover public videos.
+        This can be useful when you remember a phrase from a video,
+        a creator's name or a specific subject.
+      </p>
+
+      <p>
+        Try a search such as:
+      </p>
+
+      <div class="info-box">
+        <strong>Example search:</strong><br>
+        site:youtube.com "beginner video editing tutorial"
+      </div>
+
+      <p>
+        The <code>site:</code> search operator asks Google to focus on
+        pages from a particular website. You can replace the example
+        phrase with the topic or title you are trying to find.
+        Results are not guaranteed to include every YouTube upload,
+        but this method can provide another useful discovery route.
+      </p>
+
+      <h2 id="shorts">7. Find Shorts and Regular YouTube Videos</h2>
+
+      <p>
+        YouTube includes different video formats. Sometimes you want
+        a quick Short, while in other cases you need a full explanation
+        or detailed demonstration. Make the format clear in your query.
+      </p>
+
+      <ul>
+        <li>Add "Shorts" when you want short vertical clips.</li>
+        <li>Add "full tutorial" when you need a detailed walkthrough.</li>
+        <li>Add "complete guide" when you want broader coverage.</li>
+        <li>Add "step by step" when you need instructions in sequence.</li>
+      </ul>
+
+      <p>
+        If a suitable content-type filter is available in your version
+        of YouTube, use it to narrow the results further.
+      </p>
+
+      <h2 id="better-results">8. Improve Results by Changing Your Search Phrase</h2>
+
+      <p>
+        If the first search does not show the video you want, do not
+        repeat the exact same query several times. Change one part of
+        the phrase and see whether the results improve.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Broad Search</th>
+              <th>More Specific Search</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Video editing</td>
+              <td>Video editing tutorial for beginners</td>
+            </tr>
+            <tr>
+              <td>Gaming tips</td>
+              <td>Advanced racing game driving tips</td>
+            </tr>
+            <tr>
+              <td>Phone review</td>
+              <td>Camera and battery review of a specific phone</td>
+            </tr>
+            <tr>
+              <td>Cooking</td>
+              <td>Easy homemade pizza recipe step by step</td>
+            </tr>
+            <tr>
+              <td>Fitness</td>
+              <td>Beginner home workout without equipment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        You can also add a year, location, model number or skill level
+        when that information matters. Keep the wording natural and
+        relevant to the video you are trying to find.
+      </p>
+
+      <h2 id="search-history">9. Understand How Search History Can Affect Results</h2>
+
+      <p>
+        YouTube may use search and watch history to personalise results
+        when those controls are enabled. This means your results may
+        reflect subjects you have previously watched or searched for.
+      </p>
+
+      <p>
+        If you want to understand or manage this personalisation, review
+        the history controls in your Google or YouTube account settings.
+        You can also compare results while signed out, keeping in mind
+        that other factors may still affect what appears.
+      </p>
+
+      <h2 id="watching">10. Make It Easier to Watch the Videos You Find</h2>
+
+      <p>
+        Finding the right video is only one part of a good viewing
+        experience. Your device, internet connection, screen size and
+        playback preferences can also affect how comfortably you watch.
+        If you often use a computer, our guide on
+        <a href="https://laptop-streaming-tips.pages.dev/">
+          watch online videos on a laptop
+        </a>
+        covers practical points to consider when viewing online content
+        on a larger screen.
+      </p>
+
+      <p>
+        If you are comparing services for watching different kinds of
+        online content, you may also find our
+        <a href="https://marios-46.github.io/best-streaming-platform-guide/">
+          best streaming platform guide
+        </a>
+        useful. It provides a separate starting point for considering
+        streaming platforms and their viewing options.
+      </p>
+
+      <p>
+        For more information and resources related to YouTube viewing,
+        you can explore
+        <a href="https://youtubemods.app/">youtubemods.app</a>.
+        Always check the source of any third-party application before
+        installing it, review the permissions it requests and remember
+        that unofficial apps are not the same as the official YouTube app.
+      </p>
+
+      <h2 id="mistakes">Common YouTube Search Mistakes to Avoid</h2>
+
+      <p>
+        A few small habits can make video searches less effective.
+        Avoid these common mistakes when trying to locate a particular
+        upload:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Using only one broad word:</strong> Add meaningful
+          details to describe the video you want.
+        </li>
+        <li>
+          <strong>Ignoring filters:</strong> Use the available content
+          type, duration or date options when they are relevant.
+        </li>
+        <li>
+          <strong>Adding too many uncertain terms:</strong> Begin with
+          a short phrase and refine it gradually.
+        </li>
+        <li>
+          <strong>Assuming the first result is always best:</strong>
+          Compare titles, channels, descriptions and the actual content.
+        </li>
+        <li>
+          <strong>Trusting a title without checking the source:</strong>
+          Review the uploader and video details before relying on
+          information.
+        </li>
+        <li>
+          <strong>Following outdated filter instructions:</strong>
+          YouTube's interface changes, so menu labels may differ from
+          older guides.
+        </li>
+      </ul>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>How do I search for a specific video on YouTube?</h3>
+        <p>
+          Enter a descriptive search phrase that includes the topic
+          and any details you remember, such as a creator, device,
+          year or phrase from the title. Then use available filters
+          to narrow the results.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I search YouTube videos by channel name?</h3>
+        <p>
+          Yes. Include the channel name with your topic in the search
+          phrase, or visit the channel and use its search feature if
+          available.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I find older videos on YouTube?</h3>
+        <p>
+          Search for the topic and use an available upload-date filter
+          to narrow the results. You can also include an approximate
+          year in your search phrase.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I search for YouTube Shorts only?</h3>
+        <p>
+          YouTube has introduced a dedicated Shorts filter in its
+          search experience. Where available, select it from the
+          content-type options to focus on Shorts.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why do my YouTube search results look different from someone else's?</h3>
+        <p>
+          Search results can differ because YouTube may consider
+          personal search and watch history when personalisation
+          is enabled. Search relevance and other ranking signals
+          also influence the results.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can Google help me find a YouTube video?</h3>
+        <p>
+          Yes. You can try Google's site search operator with a
+          distinctive phrase, such as
+          <code>site:youtube.com "your search phrase"</code>.
+          This may help discover public YouTube pages.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What should I do if I cannot find the video?</h3>
+        <p>
+          Try alternative keywords, remove uncertain words, include
+          the creator's name or search for a phrase you remember
+          from the title. You can also check whether the video is
+          available through the creator's channel or playlist.
+        </p>
+      </div>
+
+      <section class="conclusion">
+        <h2>Final Thoughts</h2>
+        <p>
+          Searching for specific videos on YouTube becomes easier when
+          you use descriptive keywords, select relevant filters and
+          include details that distinguish one video from another.
+          Channel searches, playlists and Google's site search can
+          provide additional ways to discover public content.
+          Start with a clear phrase, review the results and make
+          small adjustments until you find the video that matches
+          what you need.
+        </p>
+      </section>
+
+      <section class="sources">
+        <h3>Official YouTube Resources</h3>
+        <ul>
+          <li>
+            <a href="https://support.google.com/youtube/answer/111997"
+               target="_blank" rel="noopener noreferrer">
+              YouTube Help: Advanced Search and Filters
+            </a>
+          </li>
+          <li>
+            <a href="https://support.google.com/youtube/answer/16090438"
+               target="_blank" rel="noopener noreferrer">
+              YouTube Help: How YouTube Search Works
+            </a>
+          </li>
+          <li>
+            <a href="https://support.google.com/youtube/blog/400586735/changes-to-youtube-search-filters-to-improve-content-discovery"
+               target="_blank" rel="noopener noreferrer">
+              YouTube: Changes to Search Filters
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </article>
+
+    <aside class="toc">
+      <h3>In This Guide</h3>
+      <ul>
+        <li><a href="#why-search">Why Search Can Be Difficult</a></li>
+        <li><a href="#keywords">Use Specific Keywords</a></li>
+        <li><a href="#filters">YouTube Search Filters</a></li>
+        <li><a href="#channel-search">Search by Channel</a></li>
+        <li><a href="#title-memory">Remember Part of a Title</a></li>
+        <li><a href="#playlists">Find Playlists</a></li>
+        <li><a href="#google-search">Use Google Search</a></li>
+        <li><a href="#shorts">Find Shorts</a></li>
+        <li><a href="#better-results">Improve Search Results</a></li>
+        <li><a href="#search-history">Search History</a></li>
+        <li><a href="#watching">Watching Videos</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <p class="footer-note">
+    Informational guide. YouTube interface features and availability may
+    vary by device, account and region.
+  </p>
+
+</main>
+
+</body>
+</html>
